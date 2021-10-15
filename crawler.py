@@ -1,9 +1,13 @@
 import requests
+import time
 
 
 # Requisição do tipo GET
-response = requests.get("https://www.betrybe.com/")
-print(response.status_code)   # código de status
+for _ in range(15):
+    response = requests.get("https://www.betrybe.com/")
+    print(response.status_code)   # código de status
+    time.sleep(3)
+
 print(response.headers["Content-Type"])  # conteúdo HTML
 
 # Conteúdo recebido da requisição
