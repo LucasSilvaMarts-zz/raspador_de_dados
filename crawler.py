@@ -7,6 +7,7 @@ elements_selector = Selector(text=response.text)
 
 thumbnail_url = "div.image_container a::attr(href)"
 
+
 for url in elements_selector.css(thumbnail_url).getall():
     thumbnail_request = requests.get("https://books.toscrape.com/" + url)
     thumbnail_selector = Selector(text=thumbnail_request.text)
