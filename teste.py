@@ -2,7 +2,9 @@ from parsel import Selector
 import requests
 
 
-response = requests.get("http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html")
+response = requests.get(
+  "http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
+  )
 selector = Selector(text=response.text)
 
 # Extrai a descrição
